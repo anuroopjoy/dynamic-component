@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
-import { InnerComponent } from './inner.component';
+// import { InnerComponent } from './inner.component';
 
 @NgModule({
-  declarations: [InnerComponent
-  ],
-  imports: [
-  ],
-  providers: []
+  // declarations: [InnerComponent],
+  declarations: [],
+  imports: [],
+  providers: [],
 })
-export class InnerModule { }
+export class InnerModule {}

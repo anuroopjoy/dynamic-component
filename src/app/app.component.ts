@@ -30,9 +30,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   public customInjector!: Injector;
   @ViewChild('content1', { static: true })
   public content1!: ElementRef;
-  @ViewChild('content2', { static: true })
+  @ViewChild('content2', { static: true, read: ElementRef })
   public content2!: ElementRef;
   public contentList: any[][] = [];
+  public contentInput = 'Inner projected component';
   // public customModuleFactory!: NgModuleFactory<InnerModule>;
 
   constructor(
@@ -80,4 +81,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     // this.placeholder.insert(component.hostView);
   }
   ngAfterViewInit(): void {}
+
+  handleContentClicked(data: string){
+    console.log(data);
+  }
 }
