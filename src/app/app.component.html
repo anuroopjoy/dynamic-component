@@ -1,16 +1,5 @@
 <div class="container-fluid text-center">
   {{ title }}
-  <!-- <ng-container #placeholder></ng-container> -->
-  <ng-container
-    *ngComponentOutlet="DynamicComponent; injector: customInjector; content: contentList;"
-  ></ng-container>
-  <!-- <ng-container
-    *ngComponentOutlet="DynamicComponent; ngModuleFactory: customModuleFactory"
-  ></ng-container> -->
+  <ng-container [appLoadDynamic]="dynamicInput"></ng-container>
 </div>
 
-<ng-container>
-  <div #content1>projected content</div>
-  <!-- <div #content2>projected content 2</div> -->
-  <app-inner #content2 [text]="contentInput" (clicked)="handleContentClicked($event)"></app-inner>
-</ng-container>

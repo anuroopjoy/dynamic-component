@@ -6,7 +6,6 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-dynamic',
@@ -15,11 +14,8 @@ import { SharedService } from '../shared.service';
 })
 export class DynamicComponent implements OnInit, OnChanges {
   @Input() public description: string = '';
-  @Output() public clicked!: EventEmitter<void>;
-  constructor(private sharedService: SharedService) {
-    this.description = this.sharedService.description;
-    this.clicked = this.sharedService.clicked;
-  }
+  @Output() public clicked = new EventEmitter<void>();
+  constructor() {}
 
   ngOnInit(): void {
     console.log('inside dynamic init');
