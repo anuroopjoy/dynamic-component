@@ -19,7 +19,7 @@ export class LoadDynamicDirective implements OnChanges {
     private resolver: ComponentFactoryResolver
   ) {}
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.component) {
+    if (changes.appLoadDynamic) {
       this.placeholder.clear();
       const componentFactory = this.resolver.resolveComponentFactory(
         this.appLoadDynamic.component
